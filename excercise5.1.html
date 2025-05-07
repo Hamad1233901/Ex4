@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 5.1</title>
+    <script>
+          function f5(a, l) {
+            let sum = 0;
+            for (let i = 0; i < l.length; i++) {
+                if (l[i] % a[0] === 0 || l[i] % a[1] === 0) {
+                    sum += l[i];
+                }
+            }
+            return sum;
+        }
+        function runF5() {
+            let aInput = document.getElementById('a').value;
+            let lInput = document.getElementById('l').value;
+
+            let a = aInput.split(',').map(Number);
+            let l = lInput.split(',').map(Number);
+
+            let result = f5(a, l);
+            alert("The result is: " + result);
+        }
+
+    </script>
+</head>
+<body>
+    <h2>exercise 5.1: Sum of Multiples</h2>
+
+    <label for="a">Enter two factors (comma-separated):</label><br>
+    <input type="text" id="a" style="width: 300px;" placeholder="e.g. 2,3"><br><br>
+
+    <label for="l">Enter list of numbers (comma-separated):</label><br>
+    <input type="text" id="l" style="width: 300px;" placeholder="e.g. 1,2,3,4,5,6"><br><br>
+
+    <button onclick="runF5()">Calculate</button>
+
+    
+</body>
+</html>
